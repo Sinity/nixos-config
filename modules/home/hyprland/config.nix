@@ -8,7 +8,7 @@
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
         "nm-applet &"
         "wl-clip-persist --clipboard both"
-        "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
+        "swaybg -m fill -i $(find ~/pic/wallpaper/ -maxdepth 1 -type f) &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "poweralertd &"
         "waybar &"
@@ -189,8 +189,8 @@
         "SUPER SHIFT, W, exec, vm-start"
 
         # screenshot
-        "SUPER, Print, exec, grimblast --notify --cursor --freeze save area ~/screenshot/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
-        ",Print, exec, grimblast --notify --cursor --freeze copy area"
+        "SUPER, Print, exec, grimblast --notify --cursor copysave output ~/pic/screenshot/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
+        ", Print, exec, grimblast --notify --cursor --freeze copysave area ~/pic/screenshot/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
 
         # switch focus
         "SUPER, H, movefocus, l"
