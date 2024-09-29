@@ -7,8 +7,28 @@
     fstrim.enable = true;
     openssh.enable = true;
   };
-  services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
+
+  services.journald = {
+    extraConfig = ''
+      SystemMaxUse=20G
+      SystemKeepFree=10G
+      SystemMaxFileSize=10M
+      SystemMaxFiles=2500
+      RuntimeMaxUse=1G
+    '';
+  };
+
+  systemd.sleep = { # TODO: verify hibernation works
+    extraConfig = ''
+      AllowSuspend=yes
+      AllowHibernation=yes
+      AllowSuspendThenHibernate=yes
+      AllowHybridSleep=yes
+      HibernateMode=reboot
+      HibernateState=disk
+    '';
+  };
+
+  # To prevent getting stuck at shutdown
+  systemd.extraConfig = "DefaultTimeoutStopSec=5s";
 }
