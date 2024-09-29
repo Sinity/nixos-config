@@ -56,13 +56,19 @@
         esac
       }
     '';
+
+    sessionVariables = {
+      EDITOR = "nvim";
+      BROWSER = "floorp";
+      TERM = "kitty";
+    };
+
     shellAliases = {
       # Utils
       c = "clear";
       cd = "z";
       tt = "gtrash put";
       cat = "bat";
-      nano = "micro";
       code = "codium";
       py = "python";
       icat = "kitten icat";
