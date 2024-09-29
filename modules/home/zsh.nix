@@ -5,6 +5,18 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    history = {
+      save = 9999999;
+      size = 9999999;
+      append = true;
+      share = true;
+      expireDuplicatesFirst = true;
+      extended = true;
+      ignoreDups = true;
+    };
+    historySubstringSearch.enable = true;
+
     oh-my-zsh = {
       enable = true;
       plugins = [ ];
@@ -15,11 +27,6 @@
       export "MICRO_TRUECOLOR=1"
     '';
     initExtra = ''
-      setopt share_history 
-      setopt hist_expire_dups_first
-      setopt hist_ignore_dups
-      setopt hist_verify
-      
       # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
       # - The first argument to the function ($1) is the base path to start traversal
       # - See the source code (completion.{bash,zsh}) for the details.
