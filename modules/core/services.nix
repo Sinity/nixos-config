@@ -31,4 +31,13 @@
 
   # To prevent getting stuck at shutdown
   systemd.extraConfig = "DefaultTimeoutStopSec=5s";
+
+  # Monero configuration
+  services.monero = {
+    enable = true;
+    dataDir = "/mnt/ssd_storage/monero";
+    extraConfig = ''
+      log-level=3
+    '';
+  };
 }
