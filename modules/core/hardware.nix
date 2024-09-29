@@ -48,6 +48,9 @@
   # periodically TRIM ssd storage devices
   services.fstrim.enable = true;
 
+  # set root partition options
+  fileSystems."/".options = [ "strictatime" "lazytime" ];
+
   # setup mounts of storage at boot
   boot.supportedFilesystems = [ "btrfs" "ntfs" ];
   fileSystems."/mnt/ssd_storage" = {
