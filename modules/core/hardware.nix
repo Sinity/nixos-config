@@ -24,7 +24,7 @@
 	  DiscoverableTimeout = 0;
 	  AlwaysPairable = true;
 	  PairableTimeout = 0;
-	  # FastConnectable = true;
+	  FastConnectable = true;
 	};
 
 	Policy = {
@@ -33,6 +33,9 @@
       };
     };
   };
+
+  # periodically TRIM ssd storage devices
+  services.fstrim.enable = true;
 
   # setup mounts of storage at boot
   boot.supportedFilesystems = [ "btrfs" "ntfs" ];
