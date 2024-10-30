@@ -21,7 +21,7 @@
   users.mutableUsers = false;
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "users" "video" ];
     shell = pkgs.zsh;
     hashedPassword = "$y$j9T$EE/EN4Ifgi/859ru4tQxQ.$4h7Cv885iNyHz3pjhjubW3DZqMVb9wLuAunKGKE1qFC";
   };
