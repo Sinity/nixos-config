@@ -1,14 +1,18 @@
 { pkgs, config, inputs, ... }: 
+
+let
+  factorio-auth = pkgs.factorio.override {
+    username = "Sinityy";
+    token = "f59bc437802bf3d7ad8a4d83cd3de7";
+  };
+in 
 {
   home.packages = with pkgs;[
-    ## Utils
-    # gamemode
-    # gamescope
-    # winetricks
-    # inputs.nix-gaming.packages.${pkgs.system}.wine-ge
+    steam-tui
+    steam-run
 
-    ## Minecraft
-    # prismlauncher
+    factorio-auth
+    # prismlauncher # minecraft
 
     ## Cli games
     _2048-in-terminal
