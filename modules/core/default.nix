@@ -12,7 +12,6 @@
     ./system.nix
     ./user.nix
     ./x.nix
-    ./virtualization.nix
     ./nginx.nix
   ];
 }

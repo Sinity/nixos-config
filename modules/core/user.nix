@@ -7,7 +7,7 @@
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs username host; };
     users.${username} = {
-      imports = [ ./../home/default.desktop.nix ];
+      imports = [ ./../home/default.nix ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "24.05";
