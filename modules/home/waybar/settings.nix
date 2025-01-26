@@ -38,7 +38,7 @@ in
     modules-right= [
         "cpu"
         "memory"
-        (if (host == "desktop") then "disk" else "")
+        "disk"
         "pulseaudio" 
         "network"
         "battery"
@@ -61,8 +61,7 @@ in
         format-icons= {
             "1"= "I";
             "2"= "II";
-            "3"= "III";
-            "4"= "IV";
+            "3"= "III"; "4"= "IV";
             "5"= "V";
             "6"= "VI";
             "7"= "VII";
