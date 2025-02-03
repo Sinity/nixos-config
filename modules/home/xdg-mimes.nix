@@ -93,7 +93,7 @@ in
 
   home.packages = with pkgs; [ 
     junction
-    xdg-desktop-portal-hyprland
+    # xdg-desktop-portal-hyprland
   ];
 
   home.sessionVariables = {

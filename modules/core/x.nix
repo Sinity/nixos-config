@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  programs.hyprland.enable = true;
   hardware = {
     nvidia = {
       modesetting.enable = true;
@@ -16,13 +17,11 @@
       ];
     };
   };
-  
+
   xdg.portal = {
     enable = true;
-    # wlr.enable = true;
+    wlr.enable = true;
     xdgOpenUsePortal = true;
-    config.common.default = ["hyprland" "gtk"];
-    config.hyprland.default = ["hyprland" "gtk"];
     extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
@@ -31,8 +30,6 @@
 
   environment.systemPackages = with pkgs; [
     wlr-randr # xrandr equivalent, for reading/setting display modes (resolution, refresh rate)
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
   ];
 
   fonts = {

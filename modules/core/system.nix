@@ -34,16 +34,16 @@
   programs.nh = {
     enable = true;
     clean = {
-      enable = true;
+      enable = false;
       extraArgs = "--keep-since 7d --keep 5";
     };
     flake = "/home/${username}/workdir/nixos-config";
   };
 
-  programs.nix-ld.enable = true;
-  # programs.nix-ld.libraries = with pkgs; [];
-  services.dbus.enable = true;
   programs.dconf.enable = true;
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [];
+  services.dbus.enable = true;
 
   # locale
   services.xserver.xkb.layout = "pl";
