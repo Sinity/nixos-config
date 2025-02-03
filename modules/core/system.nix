@@ -43,6 +43,7 @@
   programs.nix-ld.enable = true;
   # programs.nix-ld.libraries = with pkgs; [];
   services.dbus.enable = true;
+  programs.dconf.enable = true;
 
   # locale
   services.xserver.xkb.layout = "pl";
@@ -69,10 +70,10 @@
     freeSwapThreshold = 5;
     reportInterval = 5;
     extraArgs = [
-      "-g" # kill entire process groups
-     	"-p" # set earlyoom niceness to -20
-      "--prefer '(^|/)(java|chromium|floorp)$'"
-      "--avoid '(^|/)(init|systemd|sshd)$'"
+      "-g"
+        "-p"
+        "--prefer" "(^|/)(java|chromium|floorp)$"
+        "--avoid" "(^|/)(init|systemd|sshd)$"
     ];
   };
 

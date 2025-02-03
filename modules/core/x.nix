@@ -3,10 +3,10 @@
   hardware = {
     nvidia = {
       modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-      open = false;
+      powerManagement.enable = true;
+      open = true;
       nvidiaSettings = true;
+      forceFullCompositionPipeline = true;
     };
 
     graphics = {
@@ -19,8 +19,10 @@
   
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
+    # wlr.enable = true;
     xdgOpenUsePortal = true;
+    config.common.default = ["hyprland" "gtk"];
+    config.hyprland.default = ["hyprland" "gtk"];
     extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
@@ -29,6 +31,8 @@
 
   environment.systemPackages = with pkgs; [
     wlr-randr # xrandr equivalent, for reading/setting display modes (resolution, refresh rate)
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
   ];
 
   fonts = {
